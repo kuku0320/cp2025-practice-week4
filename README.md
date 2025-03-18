@@ -24,6 +24,11 @@ cp2025-practice-week4/
 │   ├── test_hiv_model.py
 │   ├── test_logistic.py
 │   └── test_millikan.py
+├── doc/                       # 文档目录
+│   ├── logistic_map.md        # Logistic映射说明文档
+│   ├── bacteria_model.md      # 细菌生长模型说明文档
+│   ├── hiv_model.md           # HIV病毒载量模型说明文档
+│   └── millikan.md            # 光电效应实验说明文档
 ├── .github/                   # GitHub配置目录
 │   └── workflows/             # GitHub Actions工作流
 │       └── classroom.yml      # 自动评分配置
