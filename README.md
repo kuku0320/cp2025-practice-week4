@@ -7,6 +7,7 @@
 cp2025-practice-week4/
 ├── data/                      # 数据文件目录
 │   ├── g149novickA.txt        # 细菌生长实验数据
+│   ├── g149novickB.txt        # 细菌生长实验数据
 │   ├── HIVseries.csv          # HIV病毒载量数据
 │   └── millikan.txt           # 光电效应实验数据
 ├── src/                       # 源代码目录（学生实现）
@@ -24,11 +25,11 @@ cp2025-practice-week4/
 │   ├── test_hiv_model.py
 │   ├── test_logistic.py
 │   └── test_millikan.py
-├── doc/                       # 文档目录
-│   ├── logistic_map.md        # Logistic映射说明文档
-│   ├── bacteria_model.md      # 细菌生长模型说明文档
-│   ├── hiv_model.md           # HIV病毒载量模型说明文档
-│   └── millikan.md            # 光电效应实验说明文档
+├── docs/                      # 文档目录
+│   ├── Logistic映射与混沌系统研究.md
+│   ├── 细菌生长模型研究.md
+│   ├── HIV病毒载量模型研究.md
+│   └── 光电效应实验数据分析.md
 ├── .github/                   # GitHub配置目录
 │   └── workflows/             # GitHub Actions工作流
 │       └── classroom.yml      # 自动评分配置
