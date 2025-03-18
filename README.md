@@ -3,11 +3,19 @@
 本仓库包含计算物理实践课程第四周的编程作业，涵盖多个物理模型的数值模拟与数据分析。
 
 ## 目录结构
+<<<<<<< HEAD
 
 ```text
 cp2025-practice-week4/
 ├── data/                      # 数据文件目录
 │   ├── g149novickA.txt        # 细菌生长实验数据
+=======
+```
+cp2025-practice-week4/
+├── data/                      # 数据文件目录
+│   ├── g149novickA.txt        # 细菌生长实验数据
+│   ├── g149novickB.txt        # 细菌生长实验数据
+>>>>>>> 7043290a58286088f76c2a390cdd20ab30be9006
 │   ├── HIVseries.csv          # HIV病毒载量数据
 │   └── millikan.txt           # 光电效应实验数据
 ├── src/                       # 源代码目录（学生实现）
@@ -25,11 +33,19 @@ cp2025-practice-week4/
 │   ├── test_hiv_model.py
 │   ├── test_logistic.py
 │   └── test_millikan.py
+<<<<<<< HEAD
 ├── doc/                       # 文档目录
 │   ├── logistic_map.md        # Logistic映射说明文档
 │   ├── bacteria_model.md      # 细菌生长模型说明文档
 │   ├── hiv_model.md           # HIV病毒载量模型说明文档
 │   └── millikan.md            # 光电效应实验说明文档
+=======
+├── docs/                      # 文档目录
+│   ├── Logistic映射与混沌系统研究.md
+│   ├── 细菌生长模型研究.md
+│   ├── HIV病毒载量模型研究.md
+│   └── 光电效应实验数据分析.md
+>>>>>>> 7043290a58286088f76c2a390cdd20ab30be9006
 ├── .github/                   # GitHub配置目录
 │   └── workflows/             # GitHub Actions工作流
 │       └── classroom.yml      # 自动评分配置
@@ -37,7 +53,10 @@ cp2025-practice-week4/
 └── README.md                  # 本文件
 ```
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7043290a58286088f76c2a390cdd20ab30be9006
 ## 作业内容
 
 本次作业包含四个独立的物理模型实现：
@@ -74,4 +93,8 @@ python -m pytest tests/test_logistic.py -v
 
 ## 参考资料
 - 《计算物理建模初学者指南》
+<<<<<<< HEAD
 - 课程讲义和示例代码
+=======
+- 课程讲义和示例代码
+>>>>>>> 7043290a58286088f76c2a390cdd20ab30be9006
