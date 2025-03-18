@@ -41,7 +41,7 @@ cp2025-practice-week4/
 │       └── classroom.yml      # 自动评分配置
 ├── requirements.txt           # 项目依赖
 └── README.md                  # 本文件
-
+```
 ## 作业内容
 
 本次作业包含四个独立的物理模型实现：
@@ -72,4 +72,5 @@ python -m pytest tests/test_logistic.py -v
 
 ## 参考资料
 - 《计算物理基础》
+- 《数学物理建模初学者指南》
 
