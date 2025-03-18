@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
-#from src.hiv_model_student import HIVModel, load_hiv_data
-from solutions.hiv_model_solution import HIVModel, load_hiv_data
+from src.hiv_model_student import HIVModel, load_hiv_data
+#from solutions.hiv_model_solution import HIVModel, load_hiv_data
 
 class TestHIVModel(unittest.TestCase):
     def test_model_initialization(self):

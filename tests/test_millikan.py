@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 # 添加src目录到路径
 #sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from solutions.millikan_fit_solution import load_data, calculate_parameters, calculate_planck_constant, plot_data_and_fit
+#from solutions.millikan_fit_solution import load_data, calculate_parameters, calculate_planck_constant, plot_data_and_fit
+from src.millikan_fit_student import load_data, calculate_parameters, calculate_planck_constant, plot_data_and_fit
 
 # 测试数据文件路径
 DATA_FILE = os.path.join(os.path.dirname(__file__), '../data/millikan.txt')

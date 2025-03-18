@@ -5,7 +5,8 @@
 import numpy as np
 import pytest
 import matplotlib.pyplot as plt
-from solutions.logistic_map_solution import iterate_logistic, plot_time_series, plot_bifurcation
+#from solutions.logistic_map_solution import iterate_logistic, plot_time_series, plot_bifurcation
+from src.logistic_map_student import iterate_logistic, plot_time_series, plot_bifurcation
 
 def test_iterate_logistic():
     """测试Logistic迭代函数"""
