@@ -91,8 +91,7 @@ $$
 
 ## 提交要求
 1. 修改并提交代码文件 `src/logistic_map.py`
-2. 分析报告中需包含实验结果、图像和问题的回答。
-3. 确保代码可运行，并在README文件中说明运行方法。
+2. results/logistic_map_results.md中给出实验结果、图像和问题的回答。
 
 ---
 
