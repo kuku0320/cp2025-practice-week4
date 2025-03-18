@@ -26,7 +26,7 @@ class BacteriaModel:
 
 def load_bacteria_data(filepath):
     try:
-        data = np.load(filepath)
+        data = np.loadtxt(filepath,delimiter=',')
         return data['time'], data['response']
     except:
         return np.loadtxt(filepath, delimiter=',', unpack=True)
@@ -42,7 +42,7 @@ def main():
     model.plot_models(t)
     
     # 加载实验数据
-    time_data, response_data = load_bacteria_data('data/bacteria_data.npz')
+    time_data, response_data = load_bacteria_data('data/g149novickA.txt')
     
     # 绘制实验数据
     plt.scatter(time_data, response_data, label='Experimental Data')

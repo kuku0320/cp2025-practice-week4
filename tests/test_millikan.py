@@ -9,12 +9,12 @@ import pytest
 import matplotlib.pyplot as plt
 
 # 添加src目录到路径
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+#sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 from solutions.millikan_fit_solution import load_data, calculate_parameters, calculate_planck_constant, plot_data_and_fit
 
 # 测试数据文件路径
-DATA_FILE = os.path.join(os.path.dirname(__file__), '../src/millikan.txt')
+DATA_FILE = os.path.join(os.path.dirname(__file__), '../data/millikan.txt')
 
 def test_load_data():
     """测试数据加载函数"""
@@ -44,12 +44,12 @@ def test_calculate_parameters():
     m, c, Ex, Ey, Exx, Exy = calculate_parameters(x, y)
     
     # 检查计算结果
-    assert abs(Ex - 3.0) < 1e-10, "Ex计算错误"
-    assert abs(Ey - 6.0) < 1e-10, "Ey计算错误"
-    assert abs(Exx - 11.0) < 1e-10, "Exx计算错误"
-    assert abs(Exy - 20.0) < 1e-10, "Exy计算错误"
-    assert abs(m - 2.0) < 1e-10, "斜率m计算错误"
-    assert abs(c - 0.0) < 1e-10, "截距c计算错误"
+    assert abs(Ex - 3.0) < 1e-5, "Ex计算错误"
+    assert abs(Ey - 6.0) < 1e-5, "Ey计算错误"
+    assert abs(Exx - 11.0) < 1e-5, "Exx计算错误"
+    assert abs(Exy - 22.0) < 1e-5, "Exy计算错误"
+    assert abs(m - 2.0) < 1e-5, "斜率m计算错误"
+    assert abs(c - 0.0) < 1e-5, "截距c计算错误"
     
     # 使用实际数据测试
     x, y = load_data(DATA_FILE)

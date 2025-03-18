@@ -17,7 +17,7 @@ class TestBacteriaModel(unittest.TestCase):
         self.assertEqual(len(result), 100)
 
     def test_data_loading(self):
-        time, response = load_bacteria_data('data/bacteria_data.npz')
+        time, response = load_bacteria_data('data/g149novickA.txt')
         self.assertGreater(len(time), 0)
         self.assertGreater(len(response), 0)
 
