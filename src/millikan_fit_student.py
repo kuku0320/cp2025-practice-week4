@@ -16,7 +16,12 @@ def load_data(filename):
         x: 频率数据数组
         y: 电压数据数组
     """
-    # 在此处编写代码，读取数据文件
+    try:
+        data = np.loadtxt(filename)
+        return data[:, 0], data[:, 1]
+    except Exception as e:
+        raise FileNotFoundError(f"无法加载文件: {filename}") from e
+        # 在此处编写代码，读取数据文件
     pass
 
 def calculate_parameters(x, y):
@@ -35,6 +40,25 @@ def calculate_parameters(x, y):
         Exx: x^2的平均值
         Exy: xy的平均值
     """
+    if len(x) == 0 or len(y) == 0:
+        raise ValueError("输入数据不能为空")
+    if len(x) != len(y):
+        raise ValueError("x和y数组长度必须相同")
+    
+    N = len(x)
+    Ex = np.mean(x)
+    Ey = np.mean(y)
+    Exx = np.mean(x**2)
+    Exy = np.mean(x*y)
+    
+    denominator = Exx - Ex**2
+    if denominator == 0:
+        raise ValueError("无法计算参数，分母为零")
+    
+    m = (Exy - Ex*Ey) / denominator
+    c = (Exx*Ey - Ex*Exy) / denominator
+    
+    return m, c, Ex, Ey, Exx, Exy
     # 在此处编写代码，计算Ex, Ey, Exx, Exy, m和c
     pass
 
@@ -51,6 +75,17 @@ def plot_data_and_fit(x, y, m, c):
     返回:
         fig: matplotlib图像对象
     """
+    if np.isnan(m) or np.isnan(c):
+        raise ValueError("斜率和截距不能为NaN")
+    
+    fig, ax = plt.subplots()
+    ax.scatter(x, y, label='实验数据')
+    y_fit = m*x + c
+    ax.plot(x, y_fit, 'r', label='拟合直线')
+    ax.set_xlabel('频率 (Hz)')
+    ax.set_ylabel('电压 (V)')
+    ax.legend()
+    return fig
     # 在此处编写代码，绘制数据点和拟合直线
     pass
 
@@ -65,8 +100,14 @@ def calculate_planck_constant(m):
         h: 计算得到的普朗克常量值
         relative_error: 与实际值的相对误差(%)
     """
-    # 电子电荷
-    e = 1.602e-19  # C
+   if m <= 0:
+        raise ValueError("斜率必须为正数")
+    
+    e = 1.602e-19  # 电子电荷
+    h = m * e
+    actual_h = 6.626e-34
+    relative_error = abs(h - actual_h) / actual_h * 100
+    return h, relative_error
     
     # 在此处编写代码，计算普朗克常量和相对误差
     # 提示: 实际的普朗克常量值为 6.626e-34 J·s
@@ -102,6 +143,8 @@ def main():
     # 保存图像
     fig.savefig("millikan_fit.png", dpi=300)
     plt.show()
+ except Exception as e:
+        print(f"程序出错: {str(e)}")
 
 if __name__ == "__main__":
     main()
